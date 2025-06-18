@@ -1,7 +1,8 @@
 # top-rockpaperscissors
 Rock, paper, scissors project of The Odin Project
 
-# Pseudocode
+# Planning
+## Pseudocode
 Round starts
 Computer selects a choice out of rock, paper, or scissors
 User selects a choice out of rock, paper, or scissors
