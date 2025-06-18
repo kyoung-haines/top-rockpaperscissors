@@ -14,6 +14,7 @@ function getComputerChoice() {
             break;
     }
     console.log(`Computer Choice: ${computerChoice}`);
+    return computerChoice;
 }
 
 function getHumanChoice() {
@@ -23,9 +24,35 @@ function getHumanChoice() {
     return humanChoice;
 }
 
+function playGame() {
 let humanScore = 0;
 let computerScore = 0;
+let winMessage = 'Congrats! You won!';
+let loseMessage = 'You lost! Better luck next time!';
 
-function playRound() {
+    function playRound(humanChoice, computerChoice) {
+        humanChoice = getHumanChoice();
+        computerChoice = getComputerChoice();
 
+        if(
+            (humanChoice === 'rock' && computerChoice === 'scissors') ||
+        (humanChoice === 'paper' && computerChoice === 'rock') ||
+        (humanChoice === 'scissors' && computerChoice === 'paper')
+         ) {
+            console.log(winMessage);
+            ++humanScore;
+            console.log(`CURRENT SCORE\nPlayer: ${humanScore}\nComputer: ${computerScore}`);
+        }
+        else {
+            console.log(loseMessage);
+            ++computerScore;
+            console.log(`CURRENT SCORE\nPlayer: ${humanScore}\nComputer: ${computerScore}`);
+        }
+    }
+   for(let i = 0; i < 5; i++) {
+    playRound();
+   }
+   console.log('End of rounds. Game closing.');
 }
+
+playGame();
